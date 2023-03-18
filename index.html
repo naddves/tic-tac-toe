@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic, Tac, Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="modal">
+      <form>
+        <div id="modal-input">
+          <label for="player-name">Player Name</label>
+          <input type="text" name="player-name" id="player-name" />
+        </div>
+        <div id="modal-actions">
+          <button type="reset" class="button-secondary">Cancel</button>
+          <button class="button-primary">Confirm</button>
+        </div>
+      </form>
+    </div>
+    <header>
+      <h1>Let's play Tic, Tac, Toe!</h1>
+      <p>built with HTML, CSS, Javascript and <strong>of course</strong> lots of love!</p>
+    </header>
+    <main>
+      <section id="players">
+        <ol>
+          <li class="player-card" id="player-1">
+            <p>Player 1</p>
+            <h2>Player Name</h2>
+            <p class="symbol">X</p>
+            <button class="button-secondary" id="player-1__edit" data-index="0">Edit</button>
+          </li>
+          <li class="player-card" id="player-2">
+            <p>Player 2</p>
+            <h2>Player Name</h2>
+            <p class="symbol">O</p>
+            <button class="button-secondary" id="player-2__edit" data-index="1">Edit</button>
+          </li>
+        </ol>
+        <button class="button-primary" id="start-new-game">Start New Game</button>
+      </section>
+      <section id="game-over">
+        <h2></h2>
+        <p>Click "Start New Game" above, to start new game.</p>
+      </section>
+      <section id="game-board">
+        <p>It's your turn <strong></strong>!</p>
+        <ol>
+          <li data-row="0" data-col="0"></li>
+          <li data-row="0" data-col="1"></li>
+          <li data-row="0" data-col="2"></li>
+
+          <li data-row="1" data-col="0"></li>
+          <li data-row="1" data-col="1"></li>
+          <li data-row="1" data-col="2"></li>
+
+          <li data-row="2" data-col="0"></li>
+          <li data-row="2" data-col="1"></li>
+          <li data-row="2" data-col="2"></li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>

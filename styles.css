@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&family=Raleway:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #40513b;
+  --color-accent: #9dc08b;
+  --color-light: #edf1d6;
+  --color-red: #df2e38;
+  --color-red__light: #ffe2e2;
+
+  --shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+  --border-radius: 12px;
+
+  --font-family-dyna-puff: "DynaPuff", sans-serif;
+
+  --transition: all 0.3s ease-out;
+}
+
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+header {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  color: var(--color-light);
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-family: var(--font-family-dyna-puff);
+  text-shadow: var(--shadow);
+}
+
+.button-primary {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+  opacity: 0.8;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+#modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  place-items: center;
+  z-index: 1;
+}
+
+#modal form {
+  width: 95%;
+  max-width: 30rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+#modal-input {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-input.error label {
+  color: var(--color-red);
+}
+
+#modal-input.error input {
+  border-color: var(--color-red);
+  background-color: var(--color-red__light) !important;
+}
+
+#modal-input label {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+#modal-input input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  outline: none;
+  font: inherit;
+}
+
+#modal-input input:focus {
+  background-color: var(--color-light);
+}
+
+#modal-actions {
+  text-align: end;
+  margin-top: 2rem;
+}
+
+main {
+  width: 95%;
+  max-width: 48rem;
+  margin: 0rem auto;
+}
+
+#players,
+#game-board {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+#players ol {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.player-card {
+  box-shadow: var(--shadow);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+}
+
+.player-card p {
+  color: var(--color-accent);
+}
+
+.symbol {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.player-card h2 {
+  margin: 1rem 0;
+  font-family: var(--font-family-dyna-puff);
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.player-card button {
+  margin-top: 1rem;
+}
+
+#game-over {
+  padding: 2rem;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  color: var(--color-light);
+  text-align: center;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: none;
+}
+
+#game-over h2 {
+  text-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+#game-board p {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+}
+
+#game-board {
+  display: none;
+}
+
+#game-board p strong {
+  color: var(--color-primary);
+}
+
+#game-board ol {
+  display: grid;
+  max-width: 256px;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 0.5rem;
+  margin: 1rem auto 0 auto;
+}
+
+#game-board ol li {
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  cursor: pointer;
+  color: var(--color-accent);
+  font-size: 3rem;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+}
+
+#game-board ol li:hover {
+  background-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.disabled {
+  background-color: var(--color-primary) !important;
+  cursor: default !important;
+  transform: scale(1) !important;
+}
+
+@media (min-width: 40rem) {
+  #players ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
